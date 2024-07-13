@@ -31,7 +31,7 @@ from sbot.logging import setup_logging
 from sbot.power_board import PowerBoard, PowerOutputPosition
 from sbot.utils import singular
 
-BRAIN_OUTPUT = PowerOutputPosition.FIVE_VOLT
+BRAIN_OUTPUT = PowerOutputPosition.L2
 OUTPUT_RESISTANCE = [
     1.5,  # H0
     1.5,  # H1
