@@ -33,13 +33,13 @@ from sbot.utils import singular
 
 BRAIN_OUTPUT = PowerOutputPosition.FIVE_VOLT
 OUTPUT_RESISTANCE = [
-    4.7 / 2,  # H0
-    4.7 / 2,  # H1
-    4.7,  # L0
-    4.7,  # L1
-    4.7,  # L2
-    4.7,  # L3
-    4.0,  # 5V
+    1.5,  # H0
+    1.5,  # H1
+    1.5,  # L0
+    5.0,  # L1
+    6.0,  # L2
+    1.5,  # L3
+    10.0,  # 5V
 ]
 
 setup_logging(False, False)
