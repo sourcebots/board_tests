@@ -1,0 +1,1 @@
+sbot[vision]==1.0.0

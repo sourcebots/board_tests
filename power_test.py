@@ -178,7 +178,7 @@ def test_board(output_writer, test_uvlo):
         board._serial.write('*SYS:FAN:SET:0')
 
         # buzzer
-        board.piezo.buzz(0.5, 1000)
+        board.piezo.buzz(1000, 0.5)
         buzz_result = input("Did the buzzer buzz? [Y/n]") or 'y'  # default to yes
         results['buzzer'] = buzz_result
         assert buzz_result.lower() == 'y', "Reported that the buzzer didn't buzz."
