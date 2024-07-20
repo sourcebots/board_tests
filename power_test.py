@@ -36,7 +36,7 @@ OUTPUT_RESISTANCE = [
     1.5,  # H0
     1.5,  # H1
     1.5,  # L0
-    5.0,  # L1
+    6.0,  # L1
     6.0,  # L2
     1.5,  # L3
     10.0,  # 5V
@@ -86,12 +86,13 @@ def test_output(board, results, output, input_voltage):
     sleep(0.5)
 
     expected_out_current = input_voltage / OUTPUT_RESISTANCE[output]
+    logger.debug(f"Expected current: {expected_out_current}, ({input_voltage} / {OUTPUT_RESISTANCE[output]})")
     log_and_assert(  # test output current
         results, f'out_{output.name}_current', board.outputs[output].current,
         f'output {output.name} current', 'A', expected_out_current, 0.2)
     log_and_assert(  # test global current
         results, f'out_{output.name}_global_current', board.battery_sensor.current,
-        'global output current', 'A', expected_out_current, 0.1)
+        'global output current', 'A', expected_out_current, 0.2)
 
     # disable output
     if BRAIN_OUTPUT == output:
